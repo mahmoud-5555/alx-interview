@@ -32,7 +32,7 @@ def is_winner(x, nums):
     players = {"Maria": 0, "Ben": 0}
 
     for n in nums:
-        all_numbers = [1] * n
+        all_numbers = set(range(1, n + 1))
         if n > prime_numbers[-1]:
             # add more prime numbers
             for i in range(prime_numbers[-1], n + 1):
@@ -47,11 +47,11 @@ def is_winner(x, nums):
         for i in prime_numbers:
             if i > n:
                 break
-            for j in range(i, n + 1, i):
-                if all_numbers[j - 1] == 1:
-                    all_numbers[j - 1] = 0
-                    game_count += 1
-        if game_count % 2 == 0:
+            multiples = set(range(i, n + 1, i))
+            all_numbers -= multiples
+            game_count += len(multiples)
+        is_ben_winner = (game_count % 2 == 0)
+        if is_ben_winner:
             players["Ben"] += 1
         else:
             players["Maria"] += 1
