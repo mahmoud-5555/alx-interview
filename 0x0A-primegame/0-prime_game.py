@@ -4,50 +4,20 @@
 
 def is_winner(x, nums):
     """
-    Determines the winner of the prime game.
-
-    The game is played for `x` rounds, where for each round `n`
-    (given in the `nums` list), players alternate choosing a prime
-    number and removing that prime and its multiples from the set
-    of integers [1, n]. The player who cannot make a move loses.
-
-    The winner of each round is determined by the number of moves
-    made. If the number of moves is even, Ben wins; otherwise, Maria wins.
-    The player with the most wins after `x` rounds isdeclared the overall
-    winner.
+    Determines the winner of a set of prime number removal games.
 
     Args:
-        x (int): The number of rounds to be played.
-        nums (list of int): A list of integers, where each integer represents
-            the upper limit for the set of integers [1, n] in a given round.
+        x (int): The number of rounds.
+        nums (list of int): A list of integers where each integer n denotes
+        a set of consecutive integers starting from 1 up to and including n.
 
     Returns:
-        str: The name of the player with the most wins ("Maria" or "Ben").
-        None: If the number of wins is the same for both players.
+        str: The name of the player who won the most rounds (either "Ben"
+        or "Maria").
+        None: If the winner cannot be determined.
 
-    Examples:
-        >>> is_winner(3, [4, 5, 6])
-        'Maria'
-
-        >>> is_winner(2, [7, 10])
-        'Ben'
-
-        >>> is_winner(1, [2])
-        'Maria'
-
-        >>> is_winner(2, [1, 3])
-        None
-
-    Notes:
-        - This function assumes the `nums` list contains positive integers.
-        - If `nums` contains values greater than the predefined prime list,
-          it dynamically calculates additional prime numbers.
-
-    Limitations:
-        - Performance may degrade for very large values of
-        `n` in the `nums` list due to the dynamic calculation
-        of primes.
-
+    Raises:
+        None.
     """
     prime_numbers = [
         2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
