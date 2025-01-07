@@ -83,14 +83,15 @@ def isWinner(x, nums):
                 break
             multiples = set(range(i, n + 1, i))
             all_numbers -= multiples
-            game_count += len(multiples)
+            game_count += 1
 
         # Determine winner of the round
         is_ben_winner = (game_count % 2 == 0)
-        if is_ben_winner:
-            players["Ben"] += 1
-        else:
-            players["Maria"] += 1
+        if game_count:
+            if is_ben_winner:
+                players["Ben"] += 1
+            else:
+                players["Maria"] += 1
 
     # Determine overall winner
     if players["Maria"] > players["Ben"]:
