@@ -7,13 +7,13 @@ def is_winner(x, nums):
     Determines the winner of the prime game.
 
     Args:
-    x (int): The number of rounds.
-    nums (list of int): List of integers representing
-    the upper limit for each round.
+        x (int): The number of rounds.
+        nums (list of int): List of integers representing
+        the upper limit for each round.
 
     Returns:
-    str: The name of the player with the most wins ("Maria" or "Ben").
-         If the number of wins is the same, returns None.
+        str: The name of the player with the most wins ("Maria" or "Ben").
+        If the number of wins is the same, returns None.
 
     Raises:
         None.
