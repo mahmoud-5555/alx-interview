@@ -3,22 +3,7 @@
 
 
 def is_winner(x, nums):
-    """
-    Determines the winner of a set of prime number removal games.
-
-    Args:
-        x (int): The number of rounds.
-        nums (list of int): A list of integers where each integer n denotes
-        a set of consecutive integers starting from 1 up to and including n.
-
-    Returns:
-        str: The name of the player who won the most rounds (either "Ben"
-        or "Maria").
-        None: If the winner cannot be determined.
-
-    Raises:
-        None.
-    """
+    """ Determines the winner of the prime game."""
     prime_numbers = [
         2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
         53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107,
