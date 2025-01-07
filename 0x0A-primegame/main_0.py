@@ -12,3 +12,4 @@ print("Winner: {}".format(isWinner(-1, [10])))
 
 print("Winner: {}".format(isWinner(0, [0])))
 print("Winner: {}".format(isWinner(5, [1, 2, 3, 4, 5])))
+print("Winner: {}".format(isWinner(5, [1, 2, 3, 4, 5])))
