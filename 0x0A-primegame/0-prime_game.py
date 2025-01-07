@@ -2,7 +2,7 @@
 """ This code is for the prime game """
 
 
-def is_winner(x, nums):
+def isWinner(x, nums):
     """
     Determines the winner of the prime game.
 
