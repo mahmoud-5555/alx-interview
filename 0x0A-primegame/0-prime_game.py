@@ -6,18 +6,19 @@ def is_winner(x, nums):
     """
     Determines the winner of the prime game.
 
-    The game is played for `x` rounds, where for each round `n` 
-    (given in the `nums` list), players alternate choosing a prime 
-    number and removing that prime and its multiples from the set 
+    The game is played for `x` rounds, where for each round `n`
+    (given in the `nums` list), players alternate choosing a prime
+    number and removing that prime and its multiples from the set
     of integers [1, n]. The player who cannot make a move loses.
 
-    The winner of each round is determined by the number of moves 
+    The winner of each round is determined by the number of moves
     made. If the number of moves is even, Ben wins; otherwise, Maria wins.
-    The player with the most wins after `x` rounds is declared the overall winner.
+    The player with the most wins after `x` rounds isdeclared the overall
+    winner.
 
     Args:
         x (int): The number of rounds to be played.
-        nums (list of int): A list of integers, where each integer represents 
+        nums (list of int): A list of integers, where each integer represents
             the upper limit for the set of integers [1, n] in a given round.
 
     Returns:
@@ -39,12 +40,13 @@ def is_winner(x, nums):
 
     Notes:
         - This function assumes the `nums` list contains positive integers.
-        - If `nums` contains values greater than the predefined prime list, 
+        - If `nums` contains values greater than the predefined prime list,
           it dynamically calculates additional prime numbers.
 
     Limitations:
-        - Performance may degrade for very large values of `n` in the `nums` list
-          due to the dynamic calculation of primes.
+        - Performance may degrade for very large values of
+        `n` in the `nums` list due to the dynamic calculation
+        of primes.
 
     """
     prime_numbers = [
@@ -66,13 +68,14 @@ def is_winner(x, nums):
             # Extend the prime numbers list to cover the range
             for i in range(prime_numbers[-1] + 1, n + 1):
                 is_prime = True
-                for j in range(2, int(i ** 0.5) + 1):  # Optimized prime check
+                for j in range(2, int(i ** 0.5) + 1):
+                    # Optimized prime check
                     if i % j == 0:
                         is_prime = False
                         break
                 if is_prime:
                     prime_numbers.append(i)
-        
+
         game_count = 0
         for i in prime_numbers:
             if i > n:
@@ -80,7 +83,7 @@ def is_winner(x, nums):
             multiples = set(range(i, n + 1, i))
             all_numbers -= multiples
             game_count += len(multiples)
-        
+
         # Determine winner of the round
         is_ben_winner = (game_count % 2 == 0)
         if is_ben_winner:
