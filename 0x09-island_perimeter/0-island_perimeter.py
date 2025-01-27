@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ This module is solution for Island Perimeter task. """
 
 
