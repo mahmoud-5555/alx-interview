@@ -7,10 +7,8 @@ def makeChange(coins, total):
     Returns the minimum number of coins needed to
       make change for the given total.
       """
-    if total == 0:
+    if total <= 0:
         return 0
-    if total < 0:
-        return -1
 
     dp = [total + 1] * (total + 1)
     dp[0] = 0  # base case
